@@ -1,0 +1,6 @@
+The application could be further improved by implementing the following:
+- Add a Web UI for a smoother user experience, so users can input snippets and receive instant, structured feedback without touching the CLI.
+- Give user the liberty to choose how they want their codes reviewed.
+- Expand the quality flags to cover dimensions like efficiency and robustness for more actionable reviews.
+- Add a fallback model if primary one fails.
+- Add a fourth output field called fixed code that returns a the corrected or improved version if the code is buggy or needs improvement.
