@@ -1,0 +1,16 @@
+id,code snippet,summary,line-specific comments,quality flag
+0,"while True:
+    do_something()
+# Sample ID: 861","The snippet enters an infinite loop with no termination condition and no delay, risking high CPU usage and unresponsive behavior. The trailing sample ID comment is non-functional metadata.","[{""line"": 1, ""comment"": ""Infinite loop with no termination condition. Consider using a concrete condition, a break when done, or an explicit exit strategy to avoid busy-waiting.""}, {""line"": 2, ""comment"": ""Calls do_something() without any visible termination or error handling. If the function is CPU-bound, consider adding a sleep or event-driven wait; wrap in try/except and log exceptions as needed.""}, {""line"": 3, ""comment"": ""Metadata comment. Non-code annotation; ensure it doesn't interfere with tooling. If metadata is needed, consider placing in a docstring or separate documentation.""}]",Needs Improvement
+1,"if x = 5:
+    print('x is 5')
+# Sample ID: 354","The snippet uses assignment inside an if condition instead of a comparison, which leads to a syntax error in Python. Additionally, if x is not defined prior to the if, a NameError will occur at runtime.","[{""line"": 1, ""comment"": ""Invalid Python syntax: use '==' to compare x to 5 in an if statement; '=' is assignment and cannot appear in a conditional expression.""}, {""line"": 2, ""comment"": ""If 'x' is not defined before the if statement, this will raise a NameError at runtime.""}]",Buggy
+2,"def greet(name):
+    print('Hello, ' + name)
+# Sample ID: 334","A minimal greet function that prints a greeting given a name; it is functional but could be improved with type hints and safer string handling. The code is simple and readable, but lacks documentation and robust conversion for non-string inputs.","[{""line"": 1, ""comment"": ""Consider adding a type hint and a docstring: def greet(name: str) -> None: \""\""\""Print a greeting.\""\""\""""}, {""line"": 2, ""comment"": ""Using string concatenation with name can raise TypeError if name is not a string. Use an f-string or convert explicitly: print(f'Hello, {name}') or print('Hello, ' + str(name)).""}, {""line"": 3, ""comment"": ""The trailing comment '# Sample ID: 334' is extraneous in executable code; remove or relocate if metadata is not needed.""}]",Needs Improvement
+3,"for i in range(10):
+print(i)
+# Sample ID: 906","The loop has correct structure but the body is not indented, causing an IndentationError. Indenting the print statement will fix it. The sample id comment is harmless.","[{""line"": 1, ""comment"": ""for i in range(10): is correct syntax.""}, {""line"": 2, ""comment"": ""print(i) must be indented to be inside the loop; currently it has no indentation, which will raise an IndentationError.""}, {""line"": 3, ""comment"": ""Comment line; harmless and not executed.""}]",Buggy
+4,"x = [1, 2, 3]
+print(x)
+# Sample ID: 290",The script creates a list and prints it to standard output. It is syntactically correct and self-contained; the trailing comment has no impact on execution.,[],Good
