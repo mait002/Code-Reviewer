@@ -3,7 +3,7 @@
 This application takes short Python code snippets as input and uses an LLM API (OpenAI) to generate code review comments. The script logs the responses and assigns a basic quality flag to each snippet (e.g., “Good,” “Needs Improvement,” or “Buggy”).
 
 ## Approach
-For this project, I began with a dataset of 1,000 buggy code snippets paired with their corrected versions. I combined the buggy and fixed code columns into a single collection and shuffled the entries to mix both clean and buggy code. The resulting data was saved in a file named code_snippets.csv.
+For this project, I began with a dataset of 1,000 buggy code snippets paired with their corrected versions. I collected the dataset from Kaggle, [Python Code Bug & Fix Pairs](https://www.kaggle.com/datasets/shamimhasan8/python-code-bug-and-fix-pairs). I combined the buggy and fixed code columns into a single collection and shuffled the entries to mix both clean and buggy code. The resulting data was saved in a file named code_snippets.csv.
 
 The main application loads this CSV into a Pandas DataFrame and processes the first five rows. Each snippet is reviewed in sequence, with the results stored in a list. Once the iteration is complete, the review list is converted into a Pandas DataFrame and exported to a file named output_file.csv.
 
